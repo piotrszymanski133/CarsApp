@@ -1,0 +1,20 @@
+GET http://localhost:8083/api/brands/Toyota/models
+
+###
+
+GET http://localhost:8083/api/brands/Toyota/models/2
+
+###
+
+GET http://localhost:8083/api/brands/Nissan/models
+
+###
+
+POST http://localhost:8083/api/brands/Nissan/models
+Content-Type: application/json
+
+{
+  "name": "Juke",
+  "price": 30000,
+  "generation": 3
+}

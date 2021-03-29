@@ -1,0 +1,77 @@
+GET http://localhost:8085/api/brands
+
+###
+
+GET http://localhost:8085/api/brands/Toyota
+
+###
+
+GET http://localhost:8085/api/brands/Nissan
+
+###
+
+POST http://localhost:8085/api/brands
+Content-Type: application/json
+
+{
+  "name": "Nissan",
+  "creationDate": 1910
+}
+
+###
+
+GET http://localhost:8085/api/brands/Nissan
+
+###
+
+PUT http://localhost:8085/api/brands/Nissan
+Content-Type: application/json
+
+{
+  "creationDate": 1920
+}
+
+###
+
+GET http://localhost:8085/api/brands/Toyota/models
+
+###
+
+GET http://localhost:8085/api/brands/Toyota/models/2
+
+###
+
+GET http://localhost:8085/api/brands/Nissan/models
+
+###
+
+POST http://localhost:8085/api/brands/Nissan/models
+Content-Type: application/json
+
+{
+  "name": "Juke",
+  "price": 30000,
+  "generation": 3
+}
+
+###
+
+GET http://localhost:8085/api/brands/Nissan/models
+
+###
+
+DELETE http://localhost:8085/api/brands/Toyota/models/2
+
+###
+
+GET http://localhost:8085/api/brands/Toyota/models
+
+###
+
+DELETE http://localhost:8085/api/brands/Nissan
+
+###
+
+GET http://localhost:8085/api/brands/Nissan
+
+###

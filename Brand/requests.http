@@ -1,0 +1,34 @@
+GET http://localhost:8081/api/brands
+
+###
+
+GET http://localhost:8081/api/brands/Nissan
+
+###
+
+DELETE http://localhost:8081/api/brands/Nissan
+
+###
+
+POST http://localhost:8081/api/brands
+Content-Type: application/json
+
+{
+  "name": "Nissan",
+  "creationDate": 1910
+}
+
+###
+
+PUT http://localhost:8081/api/brands/Nissan
+Content-Type: application/json
+
+{
+  "creationDate": 1920
+}
+
+###
+
+DELETE http://localhost:8081/api/brands/Nissan
+
+###
