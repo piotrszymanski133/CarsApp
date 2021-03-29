@@ -1,0 +1,69 @@
+version: '3.7'
+services:
+
+  first_load_balancer:
+    build: ./first_load_balancer/
+    ports:
+    - "9300:8080"
+    networks:
+      - public
+
+  front1:
+    build: ./front1/
+    expose:
+      - "8080"
+    networks:
+      - public
+      
+  front2:
+    build: ./front2/
+    expose:
+      - "8080"
+    networks:
+      - public
+    
+  second_load_balancer:
+    build: ./second_load_balancer/
+    expose:
+    - "8080"
+    networks:
+      - private
+      - public
+    
+  back1:
+    build: ./back/
+    restart: on-failure
+    expose:
+    - "8080"
+    networks:
+      - private
+    depends_on:
+      - "db"
+    volumes:
+      - D:\Studiaaa\Semestr 5\Architektury Usług Internetowych\lab7\volume:/home/files
+      
+  back2:
+    build: ./back/
+    restart: on-failure
+    expose:
+    - "8080"
+    networks:
+      - private
+    depends_on:
+      - "db"
+    volumes:
+      - D:\Studiaaa\Semestr 5\Architektury Usług Internetowych\lab7\volume:/home/files
+      
+  db:
+    build: ./db/
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    networks:
+      - private
+    expose:
+      - "3306"
+      
+networks:
+  private:
+  public:
+      

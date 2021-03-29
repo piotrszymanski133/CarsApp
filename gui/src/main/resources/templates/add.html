@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new file</title>
+    <style>
+        body {
+            text-align: center;
+            color: #efefef;
+            background-color:#3f3f3f;
+            margin: auto;
+        }
+        a {
+            color: #efefef;
+        }
+
+        table, th, td{
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<h2>Add file - GUI 2</h2>
+<form name="fileform" method="post" action="/addFile" enctype="multipart/form-data">
+    <label for="author">Author:</label><br>
+    <input type="text" name="author" id="author" required><br><br>
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="30" required></textarea><br><br>
+    <input type="file" id="file" name="file" required><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<a href="/view">Already uploaded files</a>
+<div></div>
+</body>
+</html>
